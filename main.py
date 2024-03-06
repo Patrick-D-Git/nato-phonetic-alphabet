@@ -14,8 +14,8 @@ nato_phonetic_df = pd.read_csv("nato_phonetic_alphabet.csv")
 nato_phonetic_list = {row.letter: row.code for (index, row) in nato_phonetic_df.iterrows()}
 
 # TODO 2. Create a list of the phonetic code words from a word that the user inputs.
-user_input = input("Type in a name: ")
+word = input("Type in a name: ").upper()
 
-phonetic_name = [nato_phonetic_list[letter.upper()] for letter in user_input]
+phonetic_name = [nato_phonetic_list[letter] for letter in word]
 
 print(phonetic_name)
